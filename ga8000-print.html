@@ -4,25 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imprimir Folleto GA8000 - Formato Librito</title>
+    <link rel="stylesheet" href="assets/css/ga8000.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* Reset para impresión */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --primary: #fd6c00;
-            --dark: #0a0a0a;
-            --white: #ffffff;
-        }
-
         body {
-            font-family: 'Roboto', sans-serif;
             background: #1a1a1a;
-            min-height: 100vh;
         }
 
-        /* ========== PANEL DE CONTROL ========== */
-        .print-controls {
+        /* ========== PANEL DE CONTROL (solo en pantalla) ========== */
+        .print-toolbar {
             position: fixed;
             top: 0;
             left: 0;
@@ -32,27 +26,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
+            z-index: 9999;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        .print-controls h1 {
+        .print-toolbar h1 {
             color: white;
-            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        .print-actions {
+        .print-toolbar-actions {
             display: flex;
             gap: 10px;
         }
 
-        .print-btn {
+        .toolbar-btn {
             background: white;
-            color: var(--primary);
+            color: #fd6c00;
             border: none;
             padding: 10px 20px;
             border-radius: 8px;
@@ -62,235 +57,152 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
             transition: all 0.2s;
         }
 
-        .print-btn:hover {
+        .toolbar-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        .print-btn.secondary {
+        .toolbar-btn.secondary {
             background: rgba(255,255,255,0.2);
             color: white;
         }
 
-        .print-btn.secondary:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
         /* ========== INSTRUCCIONES ========== */
-        .instructions {
+        .print-instructions {
             margin-top: 70px;
-            padding: 30px;
+            padding: 25px 30px;
             background: #2a2a2a;
             border-bottom: 1px solid #333;
         }
 
-        .instructions-content {
-            max-width: 900px;
+        .instructions-box {
+            max-width: 800px;
             margin: 0 auto;
-            color: white;
-        }
-
-        .instructions h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .instructions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .instruction-step {
             background: #333;
-            padding: 20px;
             border-radius: 12px;
-            border-left: 4px solid var(--primary);
+            padding: 20px 25px;
+            border-left: 4px solid #fd6c00;
         }
 
-        .step-number {
-            display: inline-flex;
-            width: 30px;
-            height: 30px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .instruction-step h3 {
-            font-size: 14px;
-            margin-bottom: 8px;
-            color: white;
-        }
-
-        .instruction-step p {
-            font-size: 12px;
-            color: #aaa;
-            line-height: 1.5;
-        }
-
-        .printer-settings {
-            margin-top: 20px;
-            padding: 15px 20px;
-            background: rgba(253, 108, 0, 0.1);
-            border: 1px solid rgba(253, 108, 0, 0.3);
-            border-radius: 8px;
-        }
-
-        .printer-settings h4 {
-            color: var(--primary);
-            font-size: 13px;
-            margin-bottom: 10px;
-        }
-
-        .printer-settings ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .printer-settings li {
-            font-size: 12px;
-            color: #ccc;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .printer-settings li i {
-            color: var(--primary);
-        }
-
-        /* ========== PREVIEW DE HOJAS ========== */
-        .sheets-preview {
-            padding: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .sheets-preview h2 {
-            color: white;
+        .instructions-box h2 {
+            color: #fd6c00;
             font-size: 16px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .sheet {
-            background: white;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-
-        .sheet-label {
-            background: #333;
-            color: white;
-            padding: 8px 15px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .sheet-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            aspect-ratio: 297/210;
-        }
-
-        .sheet-page {
-            border: 1px solid #eee;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 10px;
+        }
+
+        .instructions-box ol {
+            color: #ccc;
+            font-size: 13px;
+            line-height: 1.8;
+            padding-left: 20px;
+        }
+
+        .instructions-box ol li {
+            margin-bottom: 5px;
+        }
+
+        .instructions-box strong {
+            color: white;
+        }
+
+        /* ========== CONTENEDOR DE HOJAS ========== */
+        .sheets-container {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* ========== CADA HOJA (2 páginas lado a lado) ========== */
+        .print-sheet {
+            background: white;
+            width: 297mm;
+            height: 210mm;
+            display: flex;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
             position: relative;
             overflow: hidden;
         }
 
-        .sheet-page iframe {
-            width: 200%;
-            height: 200%;
-            border: none;
-            transform: scale(0.5);
-            transform-origin: top left;
+        .sheet-label {
             position: absolute;
-            top: 0;
+            top: -25px;
             left: 0;
-        }
-
-        .sheet-page.right iframe {
-            transform-origin: top right;
-            left: auto;
-            right: 0;
-        }
-
-        .page-number {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: var(--primary);
-            color: white;
-            padding: 4px 10px;
-            border-radius: 4px;
+            color: #888;
             font-size: 11px;
-            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* ========== PRINT STYLES ========== */
-        @media print {
-            .print-controls,
-            .instructions {
-                display: none !important;
-            }
+        .print-sheet .half-page {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            border-right: 1px dashed #ccc;
+        }
 
+        .print-sheet .half-page:last-child {
+            border-right: none;
+        }
+
+        .print-sheet .half-page .page {
+            transform: scale(0.485);
+            transform-origin: top left;
+            width: 205.8%;
+            min-height: 205.8%;
+            max-width: none;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        .blank-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 14px;
+            background: #fafafa;
+        }
+
+        /* ========== ESTILOS DE IMPRESIÓN ========== */
+        @media print {
             body {
                 background: white;
             }
 
-            .sheets-preview {
+            .print-toolbar,
+            .print-instructions,
+            .sheet-label {
+                display: none !important;
+            }
+
+            .sheets-container {
                 padding: 0;
-                max-width: none;
+                gap: 0;
             }
 
-            .sheets-preview h2 {
-                display: none;
-            }
-
-            .sheet {
+            .print-sheet {
+                width: 297mm;
+                height: 210mm;
+                box-shadow: none;
                 page-break-after: always;
                 margin: 0;
-                border-radius: 0;
-                box-shadow: none;
             }
 
-            .sheet:last-child {
+            .print-sheet:last-child {
                 page-break-after: auto;
             }
 
-            .sheet-label {
-                display: none;
-            }
-
-            .sheet-content {
-                width: 297mm;
-                height: 210mm;
-            }
-
-            .sheet-page iframe {
-                width: 200%;
-                height: 200%;
-            }
-
-            .page-number {
-                display: none;
+            .print-sheet .half-page {
+                border-right: none;
             }
 
             @page {
@@ -298,149 +210,160 @@
                 margin: 0;
             }
         }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width: 768px) {
-            .instructions-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .print-controls {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <div class="print-controls">
-        <h1><i class="fas fa-book"></i> Folleto GA8000 - Formato Librito</h1>
-        <div class="print-actions">
-            <a href="ga8000.html" class="print-btn secondary">
-                <i class="fas fa-arrow-left"></i> Volver al Folleto
+    <!-- TOOLBAR -->
+    <div class="print-toolbar">
+        <h1><i class="fas fa-book"></i> Imprimir como Librito - PRAMAC GA8000</h1>
+        <div class="print-toolbar-actions">
+            <a href="ga8000.html" class="toolbar-btn secondary">
+                <i class="fas fa-arrow-left"></i> Volver
             </a>
-            <button class="print-btn" onclick="window.print()">
-                <i class="fas fa-print"></i> Imprimir Librito
+            <button class="toolbar-btn" onclick="window.print()">
+                <i class="fas fa-print"></i> Imprimir
             </button>
         </div>
     </div>
 
-    <div class="instructions">
-        <div class="instructions-content">
-            <h2><i class="fas fa-info-circle"></i> Instrucciones para Imprimir</h2>
-            <div class="instructions-grid">
-                <div class="instruction-step">
-                    <span class="step-number">1</span>
-                    <h3>Configurar Impresora</h3>
-                    <p>En el diálogo de impresión, selecciona <strong>A4 Horizontal</strong> (Landscape) y activa la <strong>impresión a doble faz</strong> (duplex).</p>
-                </div>
-                <div class="instruction-step">
-                    <span class="step-number">2</span>
-                    <h3>Imprimir</h3>
-                    <p>Haz clic en "Imprimir Librito". Las páginas ya están ordenadas para que al doblar quede como libro.</p>
-                </div>
-                <div class="instruction-step">
-                    <span class="step-number">3</span>
-                    <h3>Encuadernar</h3>
-                    <p>Una vez impresas todas las hojas, apílalas en orden, dóblalas por la mitad y engrampá en el lomo.</p>
-                </div>
-            </div>
-            <div class="printer-settings">
-                <h4><i class="fas fa-cog"></i> Configuración recomendada:</h4>
-                <ul>
-                    <li><i class="fas fa-check"></i> Tamaño: A4</li>
-                    <li><i class="fas fa-check"></i> Orientación: Horizontal</li>
-                    <li><i class="fas fa-check"></i> Doble faz: Voltear por el lado corto</li>
-                    <li><i class="fas fa-check"></i> Escala: 100%</li>
-                    <li><i class="fas fa-check"></i> Márgenes: Ninguno</li>
-                </ul>
-            </div>
+    <!-- INSTRUCCIONES -->
+    <div class="print-instructions">
+        <div class="instructions-box">
+            <h2><i class="fas fa-info-circle"></i> Cómo imprimir el librito</h2>
+            <ol>
+                <li>Hacé clic en <strong>"Imprimir"</strong></li>
+                <li>Configurá: <strong>A4 Horizontal</strong> (Landscape)</li>
+                <li>Activá <strong>Doble faz</strong> → Voltear por el <strong>lado corto</strong></li>
+                <li>Márgenes: <strong>Ninguno</strong> | Escala: <strong>100%</strong></li>
+                <li>Una vez impreso, <strong>doblá las hojas por la mitad</strong> y engrampalas</li>
+            </ol>
         </div>
     </div>
 
-    <div class="sheets-preview">
-        <h2>Vista previa de hojas (en orden de impresión)</h2>
+    <!-- HOJAS PARA IMPRIMIR -->
+    <div class="sheets-container" id="sheetsContainer">
+        <!-- Las hojas se generan con JavaScript -->
+    </div>
 
-        <!-- Las hojas se generan dinámicamente -->
-        <div id="sheetsContainer"></div>
+    <!-- CONTENIDO ORIGINAL DEL FOLLETO (oculto, para clonar) -->
+    <div id="originalContent" style="display: none;">
+        <!-- PÁGINA 1: PORTADA -->
+        <section class="page cover" data-page="1">
+            <div class="cover-bg">
+                <div class="energy-lines"></div>
+            </div>
+            <div class="cover-content">
+                <div class="top-bar">
+                    <img src="assets/images/logo-kor.png" alt="KOR" class="logo-img">
+                    <span class="brand-text">GENERADORES</span>
+                </div>
+                <div class="hero-product">
+                    <div class="product-badge">GENERADOR RESIDENCIAL AUTOMÁTICO</div>
+                    <div class="brand-label">PRAMAC</div>
+                    <h1 class="product-name">GA<span>8000</span></h1>
+                    <p class="product-tagline">Energía Automática para tu Hogar</p>
+                    <div class="hero-image">
+                        <img src="assets/images/GA8000_hero.png" alt="PRAMAC GA8000" class="product-hero-img">
+                    </div>
+                    <div class="hero-specs">
+                        <div class="hero-spec">
+                            <span class="value">8</span>
+                            <span class="unit">kVA</span>
+                            <span class="label">Potencia</span>
+                        </div>
+                        <div class="hero-spec">
+                            <span class="value">220</span>
+                            <span class="unit">V</span>
+                            <span class="label">Monofásico</span>
+                        </div>
+                        <div class="hero-spec">
+                            <span class="value">&lt;10</span>
+                            <span class="unit">seg</span>
+                            <span class="label">Arranque Auto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA 14: CONTRAPORTADA -->
+        <section class="page back-cover" data-page="14">
+            <div class="back-bg"></div>
+            <div class="back-content">
+                <img src="assets/images/logo-kor.png" alt="KOR Generadores" class="back-logo">
+                <h1>KOR <span>Generadores</span></h1>
+                <p class="back-tagline">Energía confiable para tu hogar</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>www.generadores.ar</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+54 9 11 5809-5508</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@generadores.ar</span>
+                    </div>
+                </div>
+                <div class="certifications">
+                    <span class="cert"><i class="fas fa-certificate"></i> Distribuidor Oficial PRAMAC</span>
+                    <span class="cert"><i class="fas fa-shield-alt"></i> Servicio Técnico Autorizado</span>
+                </div>
+            </div>
+        </section>
     </div>
 
     <script>
-        // Configuración del folleto
-        const TOTAL_PAGES = 14; // Número total de páginas del folleto
-        const FOLLETO_URL = 'ga8000.html';
+        // Configuración
+        const TOTAL_PAGES = 14;
 
-        // Calcular orden de páginas para booklet
-        function getBookletOrder(totalPages) {
-            // Redondear a múltiplo de 4
+        // Función para calcular el orden de páginas para booklet
+        function getBookletPageOrder(totalPages) {
+            // Ajustar a múltiplo de 4
             const sheets = Math.ceil(totalPages / 4);
             const adjustedTotal = sheets * 4;
-            const order = [];
+            const pageOrder = [];
 
             for (let sheet = 0; sheet < sheets; sheet++) {
+                // Frente de la hoja (izq, der)
                 const frontLeft = adjustedTotal - (sheet * 2);
                 const frontRight = (sheet * 2) + 1;
+                // Dorso de la hoja (izq, der)
                 const backLeft = (sheet * 2) + 2;
                 const backRight = adjustedTotal - (sheet * 2) - 1;
 
-                order.push({
-                    sheet: sheet + 1,
-                    front: [frontLeft, frontRight],
-                    back: [backLeft, backRight]
-                });
+                pageOrder.push({ side: 'Frente', left: frontLeft, right: frontRight, sheet: sheet + 1 });
+                pageOrder.push({ side: 'Dorso', left: backLeft, right: backRight, sheet: sheet + 1 });
             }
 
-            return order;
+            return pageOrder;
         }
 
-        // Generar HTML de las hojas
+        // Generar las hojas
         function generateSheets() {
             const container = document.getElementById('sheetsContainer');
-            const bookletOrder = getBookletOrder(TOTAL_PAGES);
+            const pageOrder = getBookletPageOrder(TOTAL_PAGES);
 
             let html = '';
 
-            bookletOrder.forEach((sheet, index) => {
-                // Cara frontal
+            pageOrder.forEach((sheet, index) => {
                 html += `
-                    <div class="sheet">
-                        <div class="sheet-label">Hoja ${sheet.sheet} - Cara A (Frente)</div>
-                        <div class="sheet-content">
-                            <div class="sheet-page">
-                                ${sheet.front[0] <= TOTAL_PAGES ?
-                                    `<iframe src="${FOLLETO_URL}#page${sheet.front[0]}" scrolling="no"></iframe>
-                                    <span class="page-number">Pág. ${sheet.front[0]}</span>` :
-                                    '<span style="color:#ccc">En blanco</span>'}
-                            </div>
-                            <div class="sheet-page right">
-                                ${sheet.front[1] <= TOTAL_PAGES ?
-                                    `<iframe src="${FOLLETO_URL}#page${sheet.front[1]}" scrolling="no"></iframe>
-                                    <span class="page-number">Pág. ${sheet.front[1]}</span>` :
-                                    '<span style="color:#ccc">En blanco</span>'}
-                            </div>
+                    <div class="print-sheet">
+                        <span class="sheet-label">Hoja ${sheet.sheet} - ${sheet.side}</span>
+                        <div class="half-page">
+                            ${sheet.left <= TOTAL_PAGES ?
+                                `<iframe src="ga8000.html#page${sheet.left}" scrolling="no" style="width:206%;height:206%;transform:scale(0.485);transform-origin:top left;border:none;"></iframe>` :
+                                `<div class="blank-page" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#fafafa;color:#ccc;">En blanco</div>`
+                            }
                         </div>
-                    </div>
-                `;
-
-                // Cara trasera
-                html += `
-                    <div class="sheet">
-                        <div class="sheet-label">Hoja ${sheet.sheet} - Cara B (Dorso)</div>
-                        <div class="sheet-content">
-                            <div class="sheet-page">
-                                ${sheet.back[0] <= TOTAL_PAGES ?
-                                    `<iframe src="${FOLLETO_URL}#page${sheet.back[0]}" scrolling="no"></iframe>
-                                    <span class="page-number">Pág. ${sheet.back[0]}</span>` :
-                                    '<span style="color:#ccc">En blanco</span>'}
-                            </div>
-                            <div class="sheet-page right">
-                                ${sheet.back[1] <= TOTAL_PAGES ?
-                                    `<iframe src="${FOLLETO_URL}#page${sheet.back[1]}" scrolling="no"></iframe>
-                                    <span class="page-number">Pág. ${sheet.back[1]}</span>` :
-                                    '<span style="color:#ccc">En blanco</span>'}
-                            </div>
+                        <div class="half-page">
+                            ${sheet.right <= TOTAL_PAGES ?
+                                `<iframe src="ga8000.html#page${sheet.right}" scrolling="no" style="width:206%;height:206%;transform:scale(0.485);transform-origin:top left;border:none;"></iframe>` :
+                                `<div class="blank-page" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#fafafa;color:#ccc;">En blanco</div>`
+                            }
                         </div>
                     </div>
                 `;
