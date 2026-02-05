@@ -2304,6 +2304,190 @@ body {
    MANTENIMIENTO
    ===================================================== */
 
+/* NUEVO DISEÑO MANTENIMIENTO */
+.maint-content-new {
+    padding: 20px 30px 25px;
+}
+
+.maint-hero {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.maint-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 280px;
+}
+
+.maint-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.maint-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+}
+
+.maint-cards-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 220px;
+}
+
+.maint-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px 15px;
+    border-left: 4px solid var(--gray-light);
+}
+
+.maint-card.first { border-left-color: var(--accent-blue); }
+.maint-card.regular { border-left-color: var(--primary); }
+.maint-card.lifetime { border-left-color: var(--accent-green); }
+
+.maint-hours {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.maint-card h4 {
+    font-size: 11px;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.maint-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.maint-card ul li {
+    font-size: 9px;
+    color: var(--gray);
+    padding: 2px 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.maint-card ul li i {
+    color: var(--accent-green);
+    font-size: 8px;
+}
+
+.maint-card p {
+    font-size: 9px;
+    color: var(--gray);
+    margin: 0;
+}
+
+.maint-note {
+    display: block;
+    font-size: 8px;
+    color: var(--gray);
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.maint-bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.maint-oil-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 18px 20px;
+    border-radius: 12px;
+}
+
+.oil-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oil-icon i {
+    font-size: 22px;
+    color: white;
+}
+
+.oil-details h4 {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.oil-details .oil-type {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.maint-warranty-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #00c853 0%, #00a843 100%);
+    padding: 18px 20px;
+    border-radius: 12px;
+}
+
+.warranty-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255,255,255,0.2);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.warranty-badge i {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.warranty-badge span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    color: white;
+}
+
+.maint-warranty-card p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Legacy */
 .maint-content {
     padding: 25px 35px 40px;
 }
