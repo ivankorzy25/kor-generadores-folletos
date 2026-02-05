@@ -664,6 +664,65 @@ body {
     margin: 0;
 }
 
+/* Engine Features Section */
+.engine-features-section {
+    margin-top: 25px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.engine-features-section h4 {
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.engine-features-section h4 i {
+    color: var(--primary);
+}
+
+.eng-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.eng-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary);
+}
+
+.eng-feature > i {
+    font-size: 18px;
+    color: var(--primary);
+    margin-top: 2px;
+    width: 20px;
+    flex-shrink: 0;
+}
+
+.eng-feature strong {
+    display: block;
+    font-size: 12px;
+    color: var(--white);
+    margin-bottom: 3px;
+}
+
+.eng-feature span {
+    font-size: 10px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.4;
+}
+
 /* =====================================================
    POTENCIA
    ===================================================== */
@@ -1198,6 +1257,194 @@ body {
     color: var(--dark);
 }
 
+/* Panel Evolution Mejorado */
+.panel-frame.evolution {
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #444;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.panel-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #9bc53d;
+    margin-bottom: 15px;
+}
+
+.panel-frame.evolution .panel-screen {
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.screen-status {
+    text-align: center;
+}
+
+.screen-status .status-text {
+    display: block;
+    font-size: 14px;
+    color: #9bc53d;
+    font-family: 'Courier New', monospace;
+}
+
+.screen-status .status-active {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #9bc53d;
+    font-family: 'Courier New', monospace;
+}
+
+.panel-buttons-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-mode {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: #333;
+    color: #666;
+    border: 1px solid #444;
+}
+
+.btn-mode.active {
+    background: var(--accent-green);
+    color: white;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.btn-mode i {
+    font-size: 10px;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-nav {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 9px;
+    font-weight: 700;
+    background: #444;
+    color: #aaa;
+}
+
+.btn-nav.enter {
+    background: #2196F3;
+    color: white;
+}
+
+.btn-nav.escape {
+    background: #ff9800;
+    color: white;
+}
+
+.panel-leds {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.led-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.led {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #555;
+}
+
+.led.green {
+    background: #4CAF50;
+    box-shadow: 0 0 8px #4CAF50;
+}
+
+.led.yellow {
+    background: #333;
+}
+
+.led.red {
+    background: #333;
+}
+
+.led-label {
+    font-size: 9px;
+    color: #888;
+}
+
+/* Control Protections Grid */
+.control-protections {
+    margin-top: 20px;
+    background: var(--light);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.control-protections h4 {
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-protections h4 i {
+    color: var(--primary);
+}
+
+.ctrl-prot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.ctrl-prot {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: white;
+    border-radius: 8px;
+    font-size: 11px;
+    color: var(--dark);
+    border-left: 3px solid var(--primary);
+}
+
+.ctrl-prot i {
+    color: var(--primary);
+    font-size: 14px;
+    width: 18px;
+}
+
 /* =====================================================
    PROTECCIONES
    ===================================================== */
@@ -1675,6 +1922,210 @@ body {
     font-size: 13px;
     color: rgba(255,255,255,0.8);
     margin: 0;
+}
+
+/* =====================================================
+   ACCESORIOS
+   ===================================================== */
+
+.accessories-content {
+    padding: 25px 35px 40px;
+}
+
+.accessories-intro {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.accessories-intro p {
+    font-size: 14px;
+    color: var(--gray);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.accessories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.accessory-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--primary);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.accessory-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.acc-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--gradient-primary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.acc-icon i {
+    font-size: 20px;
+    color: white;
+}
+
+.accessory-card h4 {
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.accessory-card p {
+    font-size: 12px;
+    color: var(--gray);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.warranty-extended {
+    margin-bottom: 20px;
+}
+
+.ext-warranty-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-radius: 15px;
+    border: 2px solid var(--primary);
+}
+
+.ext-icon {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ext-icon i {
+    font-size: 30px;
+    color: white;
+}
+
+.ext-icon .plus {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+}
+
+.ext-info h4 {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.warranty-years-ext {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.warranty-years-ext .base,
+.warranty-years-ext .extra {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.warranty-years-ext .plus-sign {
+    font-size: 24px;
+    color: var(--accent-green);
+    font-weight: 700;
+}
+
+.warranty-years-ext .years-label {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2px;
+    margin-left: 5px;
+}
+
+.ext-info p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+}
+
+.transfer-switch-section {
+    background: var(--light);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.transfer-switch-section h4 {
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transfer-switch-section h4 i {
+    color: var(--primary);
+}
+
+.transfer-switch-section > p {
+    font-size: 12px;
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+.lts-features {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.lts-features span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--dark);
+    padding: 6px 12px;
+    background: white;
+    border-radius: 20px;
+}
+
+.lts-features span i {
+    color: var(--accent-green);
+    font-size: 10px;
 }
 
 /* =====================================================

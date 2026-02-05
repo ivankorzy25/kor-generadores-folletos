@@ -288,6 +288,40 @@
                     </div>
                 </div>
             </div>
+
+            <div class="engine-features-section">
+                <h4><i class="fas fa-star"></i> Tecnología G-Force</h4>
+                <div class="eng-features-grid">
+                    <div class="eng-feature">
+                        <i class="fas fa-ring"></i>
+                        <div>
+                            <strong>Cilindros Spiny-Lok™</strong>
+                            <span>Paredes de hierro fundido para mayor durabilidad y vida útil extendida</span>
+                        </div>
+                    </div>
+                    <div class="eng-feature">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <strong>Encendido Electrónico</strong>
+                            <span>Con avance de chispa para arranques suaves y rápidos siempre</span>
+                        </div>
+                    </div>
+                    <div class="eng-feature">
+                        <i class="fas fa-oil-can"></i>
+                        <div>
+                            <strong>Lubricación Presurizada</strong>
+                            <span>Sistema de lubricación completo a todos los rodamientos vitales</span>
+                        </div>
+                    </div>
+                    <div class="eng-feature">
+                        <i class="fas fa-sliders-h"></i>
+                        <div>
+                            <strong>Gobernador Electrónico</strong>
+                            <span>Mantiene frecuencia constante de 50 Hz bajo cualquier carga</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="page-indicator">04</div>
     </section>
@@ -483,45 +517,62 @@
         <div class="control-content">
             <div class="panel-showcase">
                 <div class="panel-visual">
-                    <div class="panel-frame">
+                    <div class="panel-frame evolution">
+                        <div class="panel-label">EVOLUTION</div>
                         <div class="panel-screen">
-                            <div class="screen-header">
-                                <span class="status-dot active"></span>
-                                <span>SYSTEM READY</span>
-                            </div>
-                            <div class="screen-data">
-                                <div class="data-row">
-                                    <span>Voltage</span>
-                                    <span>220V</span>
-                                </div>
-                                <div class="data-row">
-                                    <span>Frequency</span>
-                                    <span>50.0 Hz</span>
-                                </div>
-                                <div class="data-row">
-                                    <span>Run Hours</span>
-                                    <span>0000.0</span>
-                                </div>
+                            <div class="screen-status">
+                                <span class="status-text">Generator</span>
+                                <span class="status-active">Active</span>
                             </div>
                         </div>
-                        <div class="panel-buttons">
-                            <span class="btn auto">AUTO</span>
-                            <span class="btn off">OFF</span>
-                            <span class="btn manual">MANUAL</span>
+                        <div class="panel-buttons-row">
+                            <div class="mode-buttons">
+                                <span class="btn-mode auto active"><i class="fas fa-sync-alt"></i> AUTO</span>
+                                <span class="btn-mode manual"><i class="fas fa-hand-paper"></i> MANUAL</span>
+                                <span class="btn-mode off"><i class="fas fa-power-off"></i> OFF</span>
+                            </div>
+                            <div class="nav-buttons">
+                                <span class="btn-nav enter">ENTER</span>
+                                <span class="btn-nav escape">ESCAPE</span>
+                            </div>
+                        </div>
+                        <div class="panel-leds">
+                            <div class="led-group">
+                                <span class="led green"></span><span class="led-label">Ready</span>
+                            </div>
+                            <div class="led-group">
+                                <span class="led yellow"></span><span class="led-label">Maintenance</span>
+                            </div>
+                            <div class="led-group">
+                                <span class="led red"></span><span class="led-label">Alarm</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="panel-features">
-                    <h4>Funciones del Panel</h4>
+                    <h4>Funciones del Panel Evolution™</h4>
                     <ul class="feature-list">
-                        <li><i class="fas fa-check"></i> Display LCD retroiluminado</li>
-                        <li><i class="fas fa-check"></i> Historial de eventos y alarmas</li>
+                        <li><i class="fas fa-check"></i> Display LCD retroiluminado con contraste automático</li>
+                        <li><i class="fas fa-check"></i> Botones iluminados AUTO/MANUAL/OFF</li>
+                        <li><i class="fas fa-check"></i> Logs de 50 eventos: Run, Alarm y Maintenance</li>
                         <li><i class="fas fa-check"></i> Contador de horas de operación</li>
-                        <li><i class="fas fa-check"></i> Diagnóstico de fallas con códigos</li>
-                        <li><i class="fas fa-check"></i> Configuración de parámetros</li>
-                        <li><i class="fas fa-check"></i> Modo AUTO / OFF / MANUAL</li>
+                        <li><i class="fas fa-check"></i> Monitoreo constante de voltaje de red</li>
+                        <li><i class="fas fa-check"></i> Smart Battery Charger integrado</li>
+                        <li><i class="fas fa-check"></i> Firmware actualizable en campo</li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="control-protections">
+                <h4><i class="fas fa-shield-alt"></i> Protecciones del Controlador</h4>
+                <div class="ctrl-prot-grid">
+                    <div class="ctrl-prot"><i class="fas fa-bolt"></i> Regulación automática de voltaje (AVR)</div>
+                    <div class="ctrl-prot"><i class="fas fa-battery-half"></i> Protección de batería baja</div>
+                    <div class="ctrl-prot"><i class="fas fa-tachometer-alt"></i> Shutdown por sobrevelocidad (72 Hz)</div>
+                    <div class="ctrl-prot"><i class="fas fa-oil-can"></i> Shutdown por baja presión de aceite</div>
+                    <div class="ctrl-prot"><i class="fas fa-thermometer-full"></i> Shutdown por alta temperatura</div>
+                    <div class="ctrl-prot"><i class="fas fa-plug"></i> Protección contra cableado incorrecto</div>
                 </div>
             </div>
 
@@ -813,7 +864,79 @@
         <div class="page-indicator">10</div>
     </section>
 
-    <!-- ==================== PÁGINA 11: RESUMEN TÉCNICO ==================== -->
+    <!-- ==================== PÁGINA 11: ACCESORIOS ==================== -->
+    <section class="page accessories-page">
+        <div class="page-header orange">
+            <div class="header-logo">
+                <img src="assets/images/logo-kor.png" alt="KOR">
+            </div>
+            <div class="header-title">
+                <span class="section-label">Complementos</span>
+                <h2>Accesorios <span>Disponibles</span></h2>
+            </div>
+        </div>
+
+        <div class="accessories-content">
+            <div class="accessories-intro">
+                <p>Maximizá el rendimiento y protección de tu generador con accesorios originales PRAMAC diseñados para condiciones extremas.</p>
+            </div>
+
+            <div class="accessories-grid">
+                <div class="accessory-card">
+                    <div class="acc-icon"><i class="fas fa-temperature-high"></i></div>
+                    <h4>Calentador de Aceite</h4>
+                    <p>Mantiene el aceite a temperatura óptima para arranques en frío. Se instala directamente sobre el filtro de aceite.</p>
+                </div>
+                <div class="accessory-card">
+                    <div class="acc-icon"><i class="fas fa-car-battery"></i></div>
+                    <h4>Calentador de Batería</h4>
+                    <p>Pad térmico bajo la batería que asegura arranques confiables en temperaturas bajo cero.</p>
+                </div>
+                <div class="accessory-card">
+                    <div class="acc-icon"><i class="fas fa-toolbox"></i></div>
+                    <h4>Kit de Mantenimiento</h4>
+                    <p>Incluye filtro de aire, filtro de aceite, bujías y aceite. Todo lo necesario para el service periódico.</p>
+                </div>
+                <div class="accessory-card">
+                    <div class="acc-icon"><i class="fas fa-dolly"></i></div>
+                    <h4>Carro de Transporte</h4>
+                    <p>Facilita el movimiento del generador durante la instalación o reubicación.</p>
+                </div>
+            </div>
+
+            <div class="warranty-extended">
+                <div class="ext-warranty-card">
+                    <div class="ext-icon">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="plus">+</span>
+                    </div>
+                    <div class="ext-info">
+                        <h4>Garantía Extendida</h4>
+                        <div class="warranty-years-ext">
+                            <span class="base">5</span>
+                            <span class="plus-sign">+</span>
+                            <span class="extra">5</span>
+                            <span class="years-label">AÑOS</span>
+                        </div>
+                        <p>Extendé la cobertura de tu generador hasta 10 años con nuestra garantía premium.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="transfer-switch-section">
+                <h4><i class="fas fa-exchange-alt"></i> Tablero de Transferencia LTS</h4>
+                <p>Panel de transferencia automática que opera el cambio entre red eléctrica y generador. Instalación independiente del equipo, controlado por el panel Evolution.</p>
+                <div class="lts-features">
+                    <span><i class="fas fa-check"></i> Cambio automático</span>
+                    <span><i class="fas fa-check"></i> Sin lógica adicional</span>
+                    <span><i class="fas fa-check"></i> Gabinete independiente</span>
+                </div>
+            </div>
+        </div>
+        <div class="page-indicator">11</div>
+    </section>
+
+    <!-- ==================== PÁGINA 12: RESUMEN TÉCNICO ==================== -->
     <section class="page summary-page">
         <div class="page-header">
             <div class="header-logo">
@@ -888,7 +1011,7 @@
                 </div>
             </div>
         </div>
-        <div class="page-indicator">11</div>
+        <div class="page-indicator">12</div>
     </section>
 
     <!-- ==================== CONTRAPORTADA ==================== -->
