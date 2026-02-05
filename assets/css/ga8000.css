@@ -1571,6 +1571,232 @@ body {
 }
 
 /* =====================================================
+   TABLERO DE TRANSFERENCIA LTS
+   ===================================================== */
+
+.transfer-content {
+    padding: 25px 35px 40px;
+}
+
+.transfer-main {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    margin-bottom: 25px;
+    align-items: start;
+}
+
+.transfer-image {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+}
+
+.lts-panel-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 12px;
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15));
+}
+
+.transfer-info h3 {
+    font-size: 20px;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.transfer-info .transfer-lead {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.transfer-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tf-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px;
+    background: var(--light);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary);
+}
+
+.tf-feature > i {
+    font-size: 18px;
+    color: var(--primary);
+    margin-top: 2px;
+    width: 22px;
+    flex-shrink: 0;
+}
+
+.tf-feature strong {
+    display: block;
+    font-size: 12px;
+    color: var(--dark);
+    margin-bottom: 2px;
+}
+
+.tf-feature span {
+    font-size: 11px;
+    color: var(--gray);
+}
+
+.transfer-specs-section {
+    background: var(--gradient-dark);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.transfer-specs-section h4 {
+    font-size: 14px;
+    color: var(--white);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transfer-specs-section h4 i {
+    color: var(--primary);
+}
+
+.transfer-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.ts-spec {
+    text-align: center;
+    padding: 15px 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 10px;
+}
+
+.ts-spec .ts-label {
+    display: block;
+    font-size: 10px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.ts-spec .ts-value {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.transfer-timing {
+    background: var(--light);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.transfer-timing h4 {
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.transfer-timing h4 i {
+    color: var(--primary);
+}
+
+.timing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.timing-item {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.timing-item .timing-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1;
+}
+
+.timing-item .timing-value span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.timing-item .timing-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 8px 0 4px;
+}
+
+.timing-item .timing-note {
+    font-size: 9px;
+    color: var(--gray);
+}
+
+.transfer-installation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--yellow) 100%);
+    border-radius: 16px;
+    color: white;
+}
+
+.transfer-installation .install-badge {
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.transfer-installation .install-badge i {
+    font-size: 28px;
+}
+
+.transfer-installation .install-info h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.transfer-installation .install-info p {
+    font-size: 12px;
+    opacity: 0.9;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =====================================================
    PROTECCIONES
    ===================================================== */
 
@@ -2557,6 +2783,10 @@ body {
     .panel-showcase { grid-template-columns: 1fr; }
     .panel-showcase-new { grid-template-columns: 1fr; }
     .lts-hero-img { max-height: 280px; }
+    .transfer-main { grid-template-columns: 1fr; }
+    .transfer-specs-grid { grid-template-columns: repeat(2, 1fr); }
+    .timing-grid { grid-template-columns: repeat(2, 1fr); }
+    .transfer-installation { flex-direction: column; text-align: center; }
     .protections-grid { grid-template-columns: repeat(2, 1fr); }
     .cabinet-features { grid-template-columns: repeat(2, 1fr); }
     .dim-visual { flex-direction: column; }
